@@ -1,0 +1,13 @@
+uvicorn==0.21.1
+fastapi==0.94.1
+asyncpg==0.27.0
+typer==0.7.0
+sqlalchemy==2.0.9
+python-dotenv==1.0.0
+sqladmin==0.10.1
+aiogram==2.25.1
+pydantic==1.10.6
+greenlet==2.0.2
+openai==0.27.2
+alembic==1.10.2
+fastapi-users==10.4.2
