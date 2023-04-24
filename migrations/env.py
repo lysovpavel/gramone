@@ -1,9 +1,14 @@
 import asyncio
+import os
+import sys
 from logging.config import fileConfig
 
 from sqlalchemy import pool
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
+
+sys.path.append(os.path.join(sys.path[0], 'src'))
+# sys.path.append(str(pathlib.Path(__file__).resolve().parents[1]))
 
 from src.db.base import Base
 from src.gramone import models  # noqa: F401

@@ -1,12 +1,11 @@
 from datetime import datetime
 
-from sqlalchemy import DateTime
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.inspection import inspect
 from sqlalchemy.orm import Mapped, mapped_column
 
 
-from src.db.base import Base
+from db.base import Base
 
 
 class BaseModel(Base):
