@@ -7,15 +7,15 @@ from sqlalchemy import pool
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
 
-sys.path.append(os.path.join(sys.path[0], 'src'))
+# sys.path.append(os.path.join(sys.path[0], 'src'))
 # sys.path.append(str(pathlib.Path(__file__).resolve().parents[1]))
 
-from src.db.base import Base
-from src.gramone import models  # noqa: F401
+from db.base import Base
+from gramone import models  # noqa: F401
 
 from alembic import context
 
-from src.config import DATABASE_URL
+from config import DATABASE_URL
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
