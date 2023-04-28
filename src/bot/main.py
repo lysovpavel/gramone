@@ -70,7 +70,7 @@ async def gpt(message: types.Message):
 @save_message
 async def echo(message: types.Message):
     print(message)
-    await message.answer(message.text)
+    # await message.answer(message.text)
 
 
 if __name__ == '__main__':
