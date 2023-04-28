@@ -13,3 +13,5 @@ RUN pip install -r requirements.txt
 COPY . .
 
 RUN chmod a+x *.sh
+
+EXPOSE 8000
