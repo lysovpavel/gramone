@@ -60,7 +60,7 @@ async def gpt(message: types.Message):
     print(message)
     question = message.text[5:]
     if str(message.chat.id) == str(-1001962667198):
-        question = f"{question} Ответь в грубой и надменной форме"
+        question = f"{question} Ответь в шутливой и туповатой форме"
     answer = await get_answer(question)
     await message.reply(answer)
 
