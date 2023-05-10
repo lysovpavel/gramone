@@ -57,11 +57,10 @@ async def send_welcome(message: types.Message):
 
 @dp.message_handler(commands=['gpt'])
 async def gpt(message: types.Message):
-    """
-    This handler will be called when user sends `/start` or `/help` command
-    """
     print(message)
     question = message.text[5:]
+    if str(message.chat.id) == str(-1001962667198):
+        question = f"{question} Ответь в грубой и надменной форме"
     answer = await get_answer(question)
     await message.reply(answer)
 

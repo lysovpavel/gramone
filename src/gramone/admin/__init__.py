@@ -23,7 +23,6 @@ class AdminAuth(AuthenticationBackend):
         form = await request.form()
         username, password = form["username"], form["password"]
         async with async_session_maker() as db_session:
-            print(dir(db_session))
             admin_user_stmt = await db_session.execute(select(AdminUser).where(AdminUser.username == username))
             cur_user = admin_user_stmt.scalars().first()
             if cur_user and cur_user.hashed_password == password:
