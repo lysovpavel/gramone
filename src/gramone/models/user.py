@@ -8,7 +8,7 @@ class User(BaseModel):
     __tablename__ = "user"
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True)
-    is_bot: Mapped[bool] = False
+    is_bot: Mapped[bool] = mapped_column(default=False)
     first_name: Mapped[str | None]
     last_name: Mapped[str | None]
     username: Mapped[str | None]

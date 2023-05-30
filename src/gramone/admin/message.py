@@ -4,6 +4,7 @@ from gramone.models import Message
 
 
 class MessageAdmin(ModelAdmin, model=Message):
-    column_list = [Message.message_id, Message.user_id, Message.chat_id, Message.text, Message.date]
+    column_list = ['message_id', 'user_id', 'chat_id', 'text', 'date']
+    column_searchable_list = ['message_id', 'user_id', 'chat_id', 'text']
+    column_sortable_list = ['message_id', 'user_id', 'chat_id', 'text', 'date']
     name_plural = 'Messages'
-    # column_details_list = [Message.message_id, Message.user_id, Message.chat_id, Message.text, Message.date]

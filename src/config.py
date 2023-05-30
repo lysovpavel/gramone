@@ -14,6 +14,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DATABASE_URL = f"postgresql+asyncpg://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB}"
 
+DATABASE_URL_SYNC = f"postgresql+psycopg2://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB}"
+
 BOT_API_TOKEN = os.getenv('BOT_API_TOKEN')
 
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')

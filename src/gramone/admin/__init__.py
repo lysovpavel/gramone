@@ -2,7 +2,8 @@ from sqladmin import Admin
 from sqlalchemy import select
 
 from config import SECRET_KEY
-from db.base import engine, async_session_maker
+from db.base import async_engine, async_session_maker
+from .modifier import ModifierAdmin
 from gramone.admin.chat import ChatAdmin
 from gramone.admin.message import MessageAdmin
 from gramone.admin.user import UserAdmin
@@ -47,9 +48,10 @@ class AdminAuth(AuthenticationBackend):
 authentication_backend = AdminAuth(secret_key=SECRET_KEY)
 
 
-admin = Admin(app=app, engine=engine, authentication_backend=authentication_backend)
+admin = Admin(app=app, engine=async_engine, authentication_backend=authentication_backend)
 
 admin.add_view(MessageAdmin)
 admin.add_view(ChatAdmin)
 admin.add_view(UserAdmin)
 admin.add_view(AdminUserAdmin)
+admin.add_view(ModifierAdmin)

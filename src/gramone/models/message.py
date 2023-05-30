@@ -18,3 +18,4 @@ class Message(BaseModel):
     chat: Mapped[Chat] = relationship(back_populates='messages')
     date: Mapped[datetime]
     text: Mapped[str]
+    reply_to_message_id: Mapped[int | None]
