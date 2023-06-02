@@ -4,7 +4,8 @@ from gramone.models import AdminUser
 
 
 class AdminUserAdmin(ModelView, model=AdminUser):
-    # column_list = [User.id, User.username, User.first_name, User.last_name]
+    column_list = ['id', 'username', 'is_active', 'is_superuser', 'is_verified', 'created_at']
+
     def is_visible(self, request: Request) -> bool:
         return True
 

@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import BigInteger, ForeignKey
+from sqlalchemy import BigInteger, ForeignKey, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .base_model import BaseModel
@@ -17,5 +17,5 @@ class Message(BaseModel):
     chat_id: Mapped[int] = mapped_column(ForeignKey('chat.id'))
     chat: Mapped[Chat] = relationship(back_populates='messages')
     date: Mapped[datetime]
-    text: Mapped[str]
+    text: Mapped[str] = mapped_column(Text)
     reply_to_message_id: Mapped[int | None]

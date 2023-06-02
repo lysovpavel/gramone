@@ -19,8 +19,8 @@ async def get_answer(question):
     return answer
 
 
-# completion = openai.ChatCompletion.create(
-#     model='gpt-3.5-turbo',
+# completion = openai.Completion.create(
+#     model='gpt-4',
 #     messages=[
 #         # {'role': 'user', 'content': f'Ты кто вообще Ответь в грубой и надменной форме без упоминания о грубости и надменности'},
 #         {'role': 'user', 'content': f'Напиши шутку про сильно загоревших людей, что аж черные'},
@@ -34,3 +34,11 @@ async def get_answer(question):
 # )
 # answer = completion['choices'][0]['message']['content']
 # print(answer)
+#
+# response = openai.Image.create_variation(
+#   image=open("/Users/pavellysov/PycharmProjects/theOne/image_board2.png", "rb"),
+#   n=1,
+#   size="1024x1024"
+# )
+# image_url = response['data'][0]['url']
+# print(image_url)

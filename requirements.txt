@@ -4,7 +4,7 @@ asyncpg==0.27.0
 typer==0.7.0
 sqlalchemy==2.0.9
 python-dotenv==1.0.0
-sqladmin==0.10.1
+sqladmin==0.11.0
 aiogram==2.25.1
 pydantic==1.10.6
 greenlet==2.0.2
@@ -14,5 +14,6 @@ fastapi-users==10.4.2
 fastapi-users-db-sqlalchemy==5.0.0
 gunicorn==20.1.0
 psycopg2-binary==2.9.6
+
 
 

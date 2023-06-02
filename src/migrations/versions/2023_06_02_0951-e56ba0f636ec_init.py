@@ -1,8 +1,8 @@
 """init
 
-Revision ID: d6d48043af0c
+Revision ID: e56ba0f636ec
 Revises: 
-Create Date: 2023-05-27 15:07:24.439483
+Create Date: 2023-06-02 09:51:00.994049
 
 """
 import fastapi_users_db_sqlalchemy
@@ -11,7 +11,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'd6d48043af0c'
+revision = 'e56ba0f636ec'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -65,7 +65,7 @@ def upgrade() -> None:
     sa.Column('user_id', sa.BigInteger(), nullable=False),
     sa.Column('chat_id', sa.BigInteger(), nullable=False),
     sa.Column('date', sa.DateTime(), nullable=False),
-    sa.Column('text', sa.String(), nullable=False),
+    sa.Column('text', sa.Text(), nullable=False),
     sa.Column('reply_to_message_id', sa.Integer(), nullable=True),
     sa.Column('created_at', sa.DateTime(), nullable=False),
     sa.ForeignKeyConstraint(['chat_id'], ['chat.id'], ),
