@@ -11,7 +11,8 @@ from .user import User
 class Message(BaseModel):
     __tablename__ = "massage"
 
-    message_id: Mapped[int] = mapped_column(BigInteger, primary_key=True)
+    id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+    message_id: Mapped[int] = mapped_column(BigInteger)
     user_id: Mapped[int] = mapped_column(ForeignKey('user.id'))
     user: Mapped[User] = relationship(back_populates='messages')
     chat_id: Mapped[int] = mapped_column(ForeignKey('chat.id'))

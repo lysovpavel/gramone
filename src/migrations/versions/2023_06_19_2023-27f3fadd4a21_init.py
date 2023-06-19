@@ -1,8 +1,8 @@
 """init
 
-Revision ID: e56ba0f636ec
+Revision ID: 27f3fadd4a21
 Revises: 
-Create Date: 2023-06-02 09:51:00.994049
+Create Date: 2023-06-19 20:23:40.883457
 
 """
 import fastapi_users_db_sqlalchemy
@@ -11,7 +11,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'e56ba0f636ec'
+revision = '27f3fadd4a21'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -61,6 +61,7 @@ def upgrade() -> None:
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('massage',
+    sa.Column('id', sa.BigInteger(), autoincrement=True, nullable=False),
     sa.Column('message_id', sa.BigInteger(), nullable=False),
     sa.Column('user_id', sa.BigInteger(), nullable=False),
     sa.Column('chat_id', sa.BigInteger(), nullable=False),
@@ -70,7 +71,7 @@ def upgrade() -> None:
     sa.Column('created_at', sa.DateTime(), nullable=False),
     sa.ForeignKeyConstraint(['chat_id'], ['chat.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
-    sa.PrimaryKeyConstraint('message_id')
+    sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###
 
