@@ -1,4 +1,3 @@
-# import logging
 from functools import wraps
 
 from aiogram import Bot, Dispatcher, executor, types
