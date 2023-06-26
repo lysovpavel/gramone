@@ -18,4 +18,6 @@ DATABASE_URL_SYNC = f"postgresql+psycopg2://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB}
 
 BOT_API_TOKEN = os.getenv('BOT_API_TOKEN')
 
+BOT_CONTEXT_DEPTH = int(os.getenv('BOT_CONTEXT_DEPTH', default=10))
+
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')

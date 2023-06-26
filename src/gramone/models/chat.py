@@ -16,3 +16,5 @@ class Chat(BaseModel):
     modifier_id: Mapped[int | None] = mapped_column(ForeignKey('modifier.id'))
     modifier: Mapped['Modifier'] = relationship(back_populates='chats')
     messages: Mapped[list['Message']] = relationship(back_populates='chat')
+    bot_context: Mapped[bool] = mapped_column(default=True)
+    bot_context_depth: Mapped[int | None] = mapped_column(BigInteger)

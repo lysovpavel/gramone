@@ -8,8 +8,8 @@ from sqlalchemy.orm import sessionmaker
 
 from config import DATABASE_URL, DATABASE_URL_SYNC
 
-async_engine = create_async_engine(DATABASE_URL, echo=True)
-engine = create_engine(DATABASE_URL_SYNC, echo=True)
+async_engine = create_async_engine(DATABASE_URL, echo=False)
+engine = create_engine(DATABASE_URL_SYNC, echo=False)
 Base = declarative_base()
 async_session_maker = async_sessionmaker(async_engine, class_=AsyncSession, expire_on_commit=False)
 session_maker = sessionmaker(bind=engine, expire_on_commit=False)

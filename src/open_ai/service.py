@@ -5,10 +5,10 @@ from config import OPENAI_API_KEY
 openai.api_key = OPENAI_API_KEY
 
 
-async def get_answer(question):
+async def get_answer(messages):
     data = {
         'model': 'gpt-3.5-turbo',
-        'messages': [{'role': 'user', 'content': f'{question}'}]
+        'messages': messages
     }
     try:
         completion = await openai.ChatCompletion.acreate(**data)
@@ -42,3 +42,14 @@ async def get_answer(question):
 # )
 # image_url = response['data'][0]['url']
 # print(image_url)
+
+
+# response = openai.Image.create(
+#     prompt="чат Жентельменский клюб",
+#     n=1,
+#     size="1024x1024",
+#     response_format='b64_json'
+# )
+# print(response)
+# # image_url = response['data'][0]['url']
+# # print(image_url)
