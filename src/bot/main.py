@@ -68,7 +68,8 @@ async def send_welcome(message: types.Message):
     This handler will be called when user sends `/start` or `/help` command
     """
     await message.reply("Привет!\nЭто чат-бот подключенный к OpenAI API. Используемая языковая модель gpt-3.5-turbo. "
-                        "Для того, чтобы задать вопрос используй команду:\n/gpt вопрос")
+                        "Для того, чтобы задать вопрос используй команду:\n\n/gpt вопрос\n\nЧтобы бот отвечал,"
+                        " учитывая предыдущие сообщения, задавайте вопрос ответом на его сообщение (без gpt).")
 
 
 @dp.message_handler(commands=['gpt'])
